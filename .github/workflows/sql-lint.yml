@@ -1,0 +1,19 @@
+name: Check SQL reserved words are uppercase
+
+on:
+  push:
+    paths:
+      - '**.sql'
+  pull_request:
+    paths:
+      - '**.sql'
+
+jobs:
+  check-sql-uppercase:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check SQL files for lowercase reserved words
+        run: |
+          ./scripts/check_reserved_words_uppercase.sh
