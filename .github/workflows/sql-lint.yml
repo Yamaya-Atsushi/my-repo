@@ -16,4 +16,4 @@ jobs:
 
       - name: Check SQL files for lowercase reserved words
         run: |
-          /scripts/check_reserved_words_uppercase.sh
+          ~/scripts/check_reserved_words_uppercase.sh
